@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     # Defines the payload, i.e., filters to be used on the search
     payload = {
-        "country_codes[]": "br",
+        # "country_codes[]": "br",
         # "food_ids[]": 20,
         # "grape_ids[]": 3,
         # "grape_filter": "varietal",
@@ -77,6 +77,8 @@ if __name__ == '__main__':
         for match in matches:
             # Gathers the wine-based data
             wine = match['vintage']['wine']
+            # prices = match['prices']['wine']
+            # price = match['price']['wine']
 
             # Popping redundant values
             if wine['style']:
