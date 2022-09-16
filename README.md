@@ -1,4 +1,4 @@
-# Viviner: Wine Data Scrapper
+# Viviner: Wine Data Scraper
 
 *This repository holds all the necessary code to run the an automation robot that extracts wine-related information at [Vivino](https://www.vivino.com).*
 
@@ -26,22 +26,22 @@ We have already dumped all of Vivino's data and made available in both `.json` a
 
 ## Usage
 
-### Scrap Wines Meta-Data
+### scrape Wines Meta-Data
 
 Initially, one can extract every available wine using the following script:
 
 ```Python
-python scrap_wine_data.py -h
+python scrape_wine_data.py -h
 ```
 
 *Note that `-h` invokes the script helper, which assists users in employing the appropriate parameters.*
 
-### (Optional) Scrap List of Wines
+### (Optional) scrape List of Wines
 
-One can also scrap/dump the list of wines (URL format) for further inspection. To accomplish such a step, one needs to use the following script:
+One can also scrape/dump the list of wines (URL format) for further inspection. To accomplish such a step, one needs to use the following script:
 
 ```Python
-python scrap_wine_list.py -h
+python scrape_wine_list.py -h
 ```
 
 ---
