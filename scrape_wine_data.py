@@ -77,8 +77,7 @@ if __name__ == '__main__':
         for match in matches:
             # Gathers the wine-based data
             wine = match['vintage']['wine']
-            # prices = match['prices']['wine']
-            # price = match['price']['wine']
+            price = match['price']
 
             # Popping redundant values
             if wine['style']:
@@ -87,6 +86,8 @@ if __name__ == '__main__':
                 wine['style'].pop('grapes', None)
 
             print(f'Scraping data from wine: {wine["name"]}')
+
+            wine["price"] = price
 
             # Appends current match to the dictionary
             data['wines'].append(wine)
@@ -97,6 +98,7 @@ if __name__ == '__main__':
 
             # Replaces the taste profile
             data['wines'][-1]['taste'] = tastes['tastes']
+            breakpoint()
 
         # Opens the output .json file
         with open(f'{i}_{output_file}', 'w') as f:
