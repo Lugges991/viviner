@@ -98,7 +98,6 @@ if __name__ == '__main__':
 
             # Replaces the taste profile
             data['wines'][-1]['taste'] = tastes['tastes']
-            breakpoint()
 
         # Opens the output .json file
         with open(f'{i}_{output_file}', 'w') as f:
