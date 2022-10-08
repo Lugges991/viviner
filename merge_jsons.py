@@ -5,7 +5,6 @@ from pathlib import Path
 
 def merge(in_dir, out_fn):
     fnames = list(Path(in_dir).glob("*.json"))
-    breakpoint()
     data = {}
     data['wines'] = []
 
