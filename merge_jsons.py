@@ -1,26 +1,23 @@
 import json
 from argparse import ArgumentParser
 from pathlib import Path
+import pandas as pd 
 
 
 def merge(in_dir, out_fn):
-    fnames = list(Path(in_dir).glob("*.json"))
-    data = {}
-    data['wines'] = []
+    fnames = sorted(list(Path(in_dir).glob("*.json")))
 
-    n_files = len(fnames)
+    all_wines = []
 
     for fn in fnames:
+        print(f"Processing {fn.name}")
         with open(fn, "r") as f:
-            tmp_data = json.load(f)
-            data["wines"] += tmp_data["wines"]
-        f.close()
+            j = json.load(f)
+            all_wines.extend(j["wines"])
 
-    unique_data = list({row['seo_name']: row for row in data['wines']}.values())
 
-    with open(out_fn, 'w') as f:
-        # Dumps the merged data
-        json.dump(unique_data, f)
+    with open(out_fn, "w") as f:
+        json.dump(all_wines, f)
 
 
 if __name__ == "__main__":
