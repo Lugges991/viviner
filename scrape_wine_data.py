@@ -37,7 +37,7 @@ if __name__ == '__main__':
         # "food_ids[]": 20,
         # "grape_ids[]": 3,
         # "grape_filter": "varietal",
-        "min_rating": 3.7,
+        "min_rating": 0.0,
         # "order_by": "ratings_average",
         # "order": "desc",
         # "price_range_min": 25,
@@ -98,7 +98,6 @@ if __name__ == '__main__':
 
             # Replaces the taste profile
             data['wines'][-1]['taste'] = tastes['tastes']
-            breakpoint()
 
         # Opens the output .json file
         with open(f'{i}_{output_file}', 'w') as f:
